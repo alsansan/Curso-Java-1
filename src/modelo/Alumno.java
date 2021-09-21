@@ -24,7 +24,7 @@ public class Alumno extends persona{
 				legajo == ((Alumno)obj).getLegajo();
 	}
 	public String toString() {
-		return super.toString() + ",legajo" + legajo ;
+		return super.toString() + ", legajo: " + legajo ;
 	}		
 	public int hashCode(){
 		return super.hashCode() + (int)legajo;

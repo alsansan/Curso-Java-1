@@ -9,7 +9,7 @@ public class Profesor extends persona{
 	}
 	public Profesor	(String pnombre, String papellido, String piosfa) {
 		super (pnombre, papellido);
-		piosfa=iosfa;
+		iosfa=piosfa;
 	}
 	public String getIosfa() {
 		return iosfa;
@@ -24,7 +24,7 @@ public class Profesor extends persona{
 	}
 	
 	public String toString() {
-		return super.toString() + ",iosfa" + iosfa ;
+		return super.toString() + ", iosfa: " + iosfa ;
 	}		
 		
 }
