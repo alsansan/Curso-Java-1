@@ -8,13 +8,17 @@ public class Circulo extends Figura {
 	
 	//Constructores
 	public Circulo() {
-		radio=0.5f;
-		
+		this.radio=0.5f;
+		setFigura("circulo");	
 	}
+	
 	public Circulo(String figura, float pradio) {
 		super(figura);
 		this.radio=pradio;
-		Figura.maximasuperficie=calcularSuperficie();
+	}
+	
+	public String getValores() {
+		return "perimetro = " + calcularPerimetro() + "\tsuperficie = " + calcularSuperficie();
 	}
 	
 	//Genero getters y setters
@@ -22,21 +26,24 @@ public class Circulo extends Figura {
 	public void setRadio(float radio) {this.radio = radio;}
 
 	//Calculo el perímetro y el área para un círculo
-	public float calcularPerimetro(float pperimetro){
-		pperimetro=2*(float)Math.PI*radio;
+	public float calcularPerimetro(){
+		float pperimetro=2*(float)Math.PI*radio;
 		return pperimetro;
 	}
 	
-	public float calcularSuperficie(float psuperficie){
-		psuperficie=(float)Math.PI*radio*radio;
+	public float calcularSuperficie(){
+		float psuperficie=(float)Math.PI*radio*radio;
+		Figura.setMaximasuperficie(psuperficie);
 		return psuperficie;
-	}	
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		return obj instanceof Circulo	 					&&
 				super.equals(obj)  							&&
 				radio == ((Circulo)obj).getRadio();
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

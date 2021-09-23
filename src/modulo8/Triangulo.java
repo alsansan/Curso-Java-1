@@ -13,6 +13,7 @@ public class Triangulo extends Figura {
 		lado1=1.5f;
 		lado2=0.5f;
 		lado3=1.0f;
+		setFigura("triangulo");
 		
 	}
 	public Triangulo(String figura, float plado1, float plado2, float plado3){
@@ -20,23 +21,25 @@ public class Triangulo extends Figura {
 		this.lado1=plado1;
 		this.lado2=plado2;
 		this.lado3=plado3;
-		Figura.maximasuperficie=calcularSuperficie();
 	}
-	public float calcularPerimetro(float pperimetro) {
-		pperimetro=lado1+lado2+lado3;
+	public float calcularPerimetro() {
+		float pperimetro=lado1+lado2+lado3;
 		return pperimetro;
 	}
-	public float calcularSuperficie(float psuperficie) {
+	public float calcularSuperficie() {
 		float suma=(lado1+lado2+lado3)/2;
-		psuperficie=(float)Math.sqrt(suma*(suma-lado1)*(suma-lado2)*(suma-lado3));
+		float psuperficie=(float)Math.sqrt(suma*(suma-lado1)*(suma-lado2)*(suma-lado3));
+		Figura.setMaximasuperficie(psuperficie);
 		return psuperficie;
 	}
+	//Getters y setters
 	public float getLado1() {return lado1;}
 	public void setLado1(float lado1) {this.lado1 = lado1;}
 	public float getLado2() {return lado2;}
 	public void setLado2(float lado2) {this.lado2 = lado2;}
 	public float getLado3() {return lado3;}
 	public void setLado3(float lado3) {this.lado3 = lado3;}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

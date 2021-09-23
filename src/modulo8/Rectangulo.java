@@ -11,13 +11,13 @@ public class Rectangulo extends Figura {
 	public Rectangulo() {
 		base=1.5f;
 		altura=0.5f;
+		setFigura("rectangulo");
 		
 	}
 	public Rectangulo(String figura, float pbase, float paltura){
 		super(figura);
 		this.base=pbase;
 		this.altura=paltura;
-		Figura.maximasuperficie=calcularSuperficie();
 	}
 	
 	//Genero getters y setters
@@ -28,13 +28,14 @@ public class Rectangulo extends Figura {
 	
 
 	//Calculo el perímetro y el área para un círculo
-	public float calcularPerimetro(float pperimetro){
-		pperimetro=2*base+2*altura;
+	public float calcularPerimetro(){
+		float pperimetro=2*base+2*altura;
 		return pperimetro;
 	}
 	
-	public float calcularSuperficie(float psuperficie){
-		psuperficie=base*altura;
+	public float calcularSuperficie(){
+		float psuperficie=base*altura;
+		Figura.setMaximasuperficie(psuperficie);
 		return psuperficie;
 	}	
 	@Override

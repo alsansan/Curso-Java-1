@@ -13,6 +13,12 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JScrollBar;
 
 public class View_persona {
 
@@ -22,6 +28,7 @@ public class View_persona {
 	private JTextField textFieldLegajo;
 	private JTextField textFieldIosfa;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -79,10 +86,6 @@ public class View_persona {
 		lblApellido.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		frame.getContentPane().add(lblApellido);
 		
-		JList listNombres = new JList();
-		listNombres.setBounds(60, 221, 369, 78);
-		frame.getContentPane().add(listNombres);
-		
 		textFieldNombre = new JTextField();
 		textFieldNombre.setBounds(137, 42, 122, 20);
 		textFieldNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -112,10 +115,6 @@ public class View_persona {
 		
 		JButton btnBuscar = new JButton("Buscar");
 		buttonGroup.add(btnBuscar);
-		btnBuscar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnBuscar.setBounds(366, 161, 89, 23);
 		frame.getContentPane().add(btnBuscar);
 		
@@ -145,5 +144,15 @@ public class View_persona {
 		lblIosfa.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblIosfa.setBounds(273, 110, 46, 14);
 		frame.getContentPane().add(lblIosfa);
+		
+		String [] columnas= {"Nombre","Apellido"};
+		String [][] datos= {{" "," "},{" "," "}};
+		
+		JTable tabla = new JTable(datos,columnas);
+		Object[] row = {textFieldNombre, textFieldApellido};
+		tabla.setBounds(25, 229, 453, 70);
+		frame.getContentPane().add(tabla);
+
+		
 	}
 }

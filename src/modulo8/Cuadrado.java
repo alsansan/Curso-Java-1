@@ -9,26 +9,31 @@ public class Cuadrado extends Figura {
 	//Constructores
 	public Cuadrado() {
 		lado=0.5f;
+		setFigura("cuadrado");
 		
 	}
 	public Cuadrado(String figura, float plado) {
 		super(figura);
 		this.lado=plado;
-		Figura.maximasuperficie=calcularSuperficie();
+	}
+	
+	public String getValores() {
+		return "perimetro = " + calcularPerimetro() + "\tsuperficie = " + calcularSuperficie();
 	}
 	
 	//Genero getters y setters
 	public float getLado() {return lado;}
-	public void setLado(float radio) {this.lado = radio;}
-
+	public void setLado(float lado) {this.lado = lado;}
+	
 	//Calculo el perímetro y el área para un círculo
-	public float calcularPerimetro(float pperimetro){
-		pperimetro=4*lado;
+	public float calcularPerimetro(){
+		float pperimetro=4*lado;
 		return pperimetro;
 	}
 	
-	public float calcularSuperficie(float psuperficie){
-		psuperficie=lado*lado;
+	public float calcularSuperficie(){
+		float psuperficie=lado*lado;
+		Figura.setMaximasuperficie(psuperficie);
 		return psuperficie;
 	}	
 

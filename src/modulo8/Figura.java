@@ -19,6 +19,9 @@ public abstract class Figura {
 	public String getFigura() {return figura;}
 	public void setFigura(String figura) {this.figura = figura;}
 	
+	public abstract float calcularPerimetro();
+	public abstract float calcularSuperficie();
+	
 	public boolean equals(Object obj){
 		//establezco las reglas como yo quiero 
 		boolean bln =false;
