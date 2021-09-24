@@ -10,9 +10,9 @@ public class Triangulo extends Figura {
 	
 	//Constructores
 	public Triangulo() {
-		lado1=1.5f;
+		lado1=0.5f;
 		lado2=0.5f;
-		lado3=1.0f;
+		lado3=0.5f;
 		setFigura("triangulo");
 		
 	}

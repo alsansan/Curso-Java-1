@@ -9,7 +9,7 @@ public class Rectangulo extends Figura {
 	
 	//Constructores
 	public Rectangulo() {
-		base=1.5f;
+		base=0.5f;
 		altura=0.5f;
 		setFigura("rectangulo");
 		

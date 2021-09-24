@@ -1,4 +1,4 @@
-package personatest;
+package modelo.personatest;
 
 import static org.junit.Assert.*;
 
