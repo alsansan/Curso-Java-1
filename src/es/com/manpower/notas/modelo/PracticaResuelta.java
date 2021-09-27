@@ -1,4 +1,4 @@
-package modelonotas;
+package es.com.manpower.notas.modelo;
 
 public class PracticaResuelta implements Model {
 	private int codigo;

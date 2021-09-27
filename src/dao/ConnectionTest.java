@@ -13,9 +13,9 @@ public class ConnectionTest {
 	public static void main(String[] args) {
 		try {
 			//1- driver levantar el driver			
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			//2- conexion
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/manpower", "sistema", "sistema");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/manpower", "admin", "admin");
 			//3- creao la sentencia
 			Statement stm = conexion.createStatement();
 			//4-ejecuto la consulta

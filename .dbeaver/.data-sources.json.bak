@@ -18,23 +18,8 @@
 					"rewriteBatchedStatements": "true",
 					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2"
 				},
-				"auth-model": "native"
-			}
-		},
-		"mysql8-17c1c2a6e2a-6d1964a1320030da": {
-			"provider": "mysql",
-			"driver": "mysql8",
-			"name": "manpower",
-			"save-password": true,
-			"read-only": false,
-			"configuration": {
-				"host": "localhost",
-				"port": "3306",
-				"database": "manpower",
-				"url": "jdbc:mysql://localhost:3306/manpower",
-				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
-				"type": "dev",
-				"auth-model": "native"
+				"auth-model": "native",
+				"handlers": {}
 			}
 		}
 	},

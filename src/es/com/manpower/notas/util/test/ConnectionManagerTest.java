@@ -1,4 +1,4 @@
-package utildate;
+package es.com.manpower.notas.util.test;
 
 import static org.junit.Assert.*;
 
@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import es.com.manpower.notas.util.ConnectionManager; 
 
 public class ConnectionManagerTest {
 	//lote de prubas
@@ -17,9 +18,9 @@ public class ConnectionManagerTest {
 	@Before
 	public void antes() throws Exception{
 		//1- driver levantar el driver			
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		//2- conexion
-		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/manpower", "sistema", "sistema");
+		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/manpower", "admin", "admin");
 		ConnectionManager.conectar();
 
 	}

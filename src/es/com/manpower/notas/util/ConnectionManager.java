@@ -1,4 +1,4 @@
-package utildate;
+package es.com.manpower.notas.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,9 +10,9 @@ public class ConnectionManager {
 	
 	public static void  conectar() throws ClassNotFoundException, SQLException {
 		//1- driver levantar el driver			
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		//2- conexion
-		conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/manpower", "sistema", "sistema");
+		conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/manpower", "admin", "admin");
 	}
 	
 	public static void desConectar() throws SQLException{

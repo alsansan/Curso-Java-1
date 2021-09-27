@@ -1,8 +1,8 @@
-package modelonotas;
+package es.com.manpower.notas.modelo;
 
 import java.util.List;
 
-public class Alumno implements Model{
+public class Alumno implements Model, Vaciable{
 	private int 	codigo						;
 	private String 	nombre						;	
 	private String 	apellido					;
@@ -20,6 +20,10 @@ public class Alumno implements Model{
 		this.apellido = apellido;
 		this.estudios = estudios;
 		this.linkArepositorio = linkArepositorio;
+	}
+
+	public Alumno(int pCod) {
+		codigo = pCod;
 	}
 
 	public int getCodigo() {
@@ -93,6 +97,16 @@ public class Alumno implements Model{
 		sb.append(", practicasResueltas=");
 		sb.append(this.practicasResueltas);		
 		return sb.toString();
+	}
+
+	@Override
+	public boolean isEmpty() {		
+		return codigo 				==0 	&&
+				nombre 				==null 	&&
+				apellido 			== null &&
+				estudios 			== null &&
+				linkArepositorio 	==null  &&
+				practicasResueltas 	==null;
 	}
 	
 

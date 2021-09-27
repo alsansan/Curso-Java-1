@@ -1,4 +1,4 @@
-package dao;
+package es.com.manpower.notas.modelo.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelonotas.Alumno;
+import es.com.manpower.notas.modelo.Alumno;
 import es.com.manpower.notas.modelo.Model;
 import es.com.manpower.notas.util.ConnectionManager;
 

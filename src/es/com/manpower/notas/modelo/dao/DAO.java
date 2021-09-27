@@ -1,9 +1,7 @@
-package dao;
+package es.com.manpower.notas.modelo.dao;
 
 import java.sql.SQLException;
 import java.util.List;
-
-import javax.jws.WebParam.Mode;
 
 import es.com.manpower.notas.modelo.Model;
 
@@ -14,6 +12,5 @@ public interface DAO {
 	public void modificar(Model pMod)throws ClassNotFoundException, SQLException;
 	public void eliminar(Model pMod)throws ClassNotFoundException, SQLException;
 	public List<Model> leer(Model pMod)throws ClassNotFoundException, SQLException;
-	
 
 }
