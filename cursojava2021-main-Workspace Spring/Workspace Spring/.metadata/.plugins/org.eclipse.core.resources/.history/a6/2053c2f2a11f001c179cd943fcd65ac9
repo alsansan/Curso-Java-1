@@ -1,8 +1,0 @@
-package com.domain.controller;
-
-import org.springframework.stereotype.Controller;
-
-@IndexController
-public class IndexController {
-
-}

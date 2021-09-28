@@ -1,5 +1,0 @@
-INDEX VERSION 1.131
-C:\workspace\Workspace Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2613607451.index
-\HolaSpringFrameWork\src\main\java
-C:\workspace\cursojava2021\Workspace Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1422026278.index
-\HolaSpringFrameWork\src\main\java

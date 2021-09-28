@@ -1,3 +1,0 @@
-#Tomcat publish data
-#Mon Sep 27 18:58:39 CEST 2021
-org.eclipse.jst.jee.server\:/binary\:C\:\\workspace\\cursojava2021\\Workspace\ Spring\\HolaSpringFrameWork\\src\\main\\webapp\\WEB-INF\\lib\\spring-web-5.3.10.jar=WEB-INF/lib/spring-web-5.3.10.jar
