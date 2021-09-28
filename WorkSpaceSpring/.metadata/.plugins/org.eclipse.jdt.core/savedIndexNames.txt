@@ -3,7 +3,6 @@ INDEX VERSION 1.131+C:\miWorkSpace\Curso-Java-1\WorkSpaceSpring\.metadata\.plugi
 2335626226.index
 3839104697.index
 453152320.index
-1609123020.index
 2619164429.index
 338479105.index
 1314232470.index

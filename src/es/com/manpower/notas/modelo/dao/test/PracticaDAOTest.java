@@ -24,8 +24,8 @@ import es.com.manpower.notas.util.ConnectionManager;
 
 public class PracticaDAOTest {
 	//defino el objtedo 
-	DAO practicaDao;
-
+DAO practicaDao;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		ConnectionManager.conectar();
@@ -77,103 +77,104 @@ public class PracticaDAOTest {
 	public void testAgregar() {
 		try {
 			practicaDao.agregar(new Practica(0, "Gabriel_test"));
-			//tengo que leer 
+			// tengo que leer
 			ConnectionManager.conectar();
 			Connection con = ConnectionManager.getConection();
 			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery("Select prac_nombre from practicas where prac_nombre ='Gabriel_test'");
+			ResultSet rs = stm.executeQuery("SELECT PRAC_NOMBRE from practicas where PRAC_NOMBRE = 'Gabriel_test'");
 			rs.next();
-			assertEquals("Gabriel_test", rs.getString("prac_nombre"));
+			assertEquals("Gabriel_test", rs.getString("PRAC_NOMBRE"));
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			assertTrue(false);
 			e.printStackTrace();
-		}
+		}	
 	}
 
 	@Test
 	public void testModificar() {
 		try {
-			//1- leo los datos datos de Marina que es el registro para modificar
+			
+			//1- leo los datos de Marina para saber el id
 			ConnectionManager.conectar();
 			Connection con = ConnectionManager.getConection();
 			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery("Select  PRAC_ID  from practicas where PRAC_NOMBRE ='Marina_test'");
+			ResultSet rs = stm.executeQuery("SELECT PRAC_ID  from practicas where PRAC_NOMBRE = 'practica 2 - variables'");
 			rs.next();
-			
-			//2- modifico el objeto con los datos de Marina			
-			Practica pra = new Practica(rs.getInt("ALU_ID")		, 
-									"MarinaModif_test"			);
-			
+			//2- modifico los datos
+			Practica pra = new Practica(rs.getInt("PRAC_ID"), 
+									"practica 2 - variables");
 			practicaDao.modificar(pra);
 			
-			//3 leer que paso
-			StringBuilder sql = new StringBuilder("Select  PRAC_ID, PRAC_NOMBRE");
-			sql.append("  from practicas");
-			sql.append(" where prac_nombre ='MarinaModif_test'");			
+			//3- leemos lo que paso
+			StringBuilder sql = new StringBuilder("SELECT PRAC_ID, PRAC_NOMBRE");
+			sql.append(" from practicas");
+			sql.append(" where prac_nombre = 'practica 2 - variables' ");
 			
-			rs = stm.executeQuery(sql.toString() );
+			rs = stm.executeQuery(sql.toString());
+			
 			rs.next();
-			Practica praLeido = new Practica(	rs.getInt("PRAC_ID")			, 
+			Practica aluLeido = new Practica( rs.getInt("PRAC_ID"), 
 											rs.getString("PRAC_NOMBRE"));
 			
-			assertEquals(pra.getCodigo()			, praLeido.getCodigo())			;
-			assertEquals(pra.getNombre()			, praLeido.getNombre())			;
+			assertEquals(pra.getCodigo(), aluLeido.getCodigo());
+			assertEquals(pra.getNombre(), aluLeido.getNombre());
 
+		
 		} catch (ClassNotFoundException | SQLException e) {
-
+			
 			e.printStackTrace();
 		}
-		
 	}
 
 	@Test
 	public void testEliminar() {
-		//1- leo los datos datos de Marina que es el registro para modificar
+		
 		try {
 			ConnectionManager.conectar();
 			Connection con = ConnectionManager.getConection();
 			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery("Select  PRAC_ID  from practicas where PRAC_NOMBRE ='Monsef_test'");
+			ResultSet rs = stm.executeQuery("SELECT PRAC_ID from practicas where PRAC_NOMBRE = 'practica 1 - pantallas'");
 			rs.next();
 			
-		//2- elimino	
-			Practica pra = new Practica(rs.getInt("ALU_ID"));
-			practicaDao.eliminar(pra);
-	   //3- que paso?
+			// 2- elimino
+			Practica alu = new Practica(rs.getInt("PRAC_ID"));
+			practicaDao.eliminar(alu);
 			
-			rs = stm.executeQuery("Select  PRAC_ID  from practicas where PRAC_NOMBRE ='Monsef_test'");			
-			assertFalse(rs.next());			
+			//3- que paso?
+			rs = stm.executeQuery("SELECT PRAC_ID  from practicas where PRAC_NOMBRE = 'practica 1 - pantallas'");
+			
+			assertFalse(rs.next());
 
+			
 		} catch (ClassNotFoundException | SQLException e) {
-			assertTrue(false);			
+			assertTrue(true);
 			e.printStackTrace();
-		}
-
+		} 	
 	}
 
 	@Test
 	public void testLeerPorCodigo() {
+		
 		try {
-			//1- lectura de los datos objetivo conseguir el id
-			ConnectionManager.conectar();
+			// 1- lectura de los datos, queremos el id
+			ConnectionManager.conectar();			
 			Connection con = ConnectionManager.getConection();
 			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery("Select  PRAC_ID  from practicas where PRAC_NOMBRE ='Aarn_test'");
+			ResultSet rs = stm.executeQuery("SELECT PRAC_ID from practicas where PRAC_NOMBRE = 'practica 3 - if-condiciones'");
 			rs.next();
+					
+			Practica alu = new Practica(rs.getInt("PRAC_ID"));
+			List<Model> practicas = practicaDao.leer(alu);
 			
-			Practica pra = new Practica(rs.getInt("Prac_ID"));
-			List<Model>practicas = practicaDao.leer(pra);
-			
-			assertEquals("Aarn_test"											, ((Practica)practicas.get(0)).getNombre());
-			
+			assertEquals("practica 3 - if-condiciones", 	((Practica) practicas.get(0)).getNombre());
 			
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			assertTrue(false);
 			e.printStackTrace();
-		}
-
+		} 
 	}
+	
 
 }
