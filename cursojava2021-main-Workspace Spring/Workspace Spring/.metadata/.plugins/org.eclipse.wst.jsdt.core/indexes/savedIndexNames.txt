@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+C:\workspace\cursojava2021\Workspace Spring\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3014220162.index
+743120533.index
+2363064375.index
+1422026278.index
+3070106479.index
+1422026278.index
+1609123020.index
+684206555.index

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import es.com.manpower.notas.modelo.Model;
+import es.com.manpower.notas.modelo.Practica;
 
 public interface DAO {
 	//responde a un patron de diseo DAO

@@ -1,6 +1,8 @@
 package es.com.manpower.notas.modelo;
 
-public class Practica {
+import java.util.List;
+
+public class Practica implements Model{
     private int codigo		;
     private String nombre	;
     
@@ -10,6 +12,11 @@ public class Practica {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
+	}
+
+	public Practica(int codigo) {
+		super();
+		this.codigo=codigo;
 	}
 
 	public int getCodigo() {
