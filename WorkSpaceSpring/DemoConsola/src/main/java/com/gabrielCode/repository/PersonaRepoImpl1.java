@@ -15,7 +15,7 @@ import com.gabrielCode.DemoConsolaApplication;
 		
 		@Override
 		public void registrar(String pNombre) {
-			log.info("Se registro (persona 1): " + pNombre);
+			log.info("Se registro ... a: " + pNombre);
 		}
 
 	}
