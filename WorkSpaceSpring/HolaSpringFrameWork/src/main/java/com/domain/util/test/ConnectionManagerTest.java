@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import es.com.manpower.notas.util.ConnectionManager; 
+import com.domain.util.ConnectionManager; 
 
 public class ConnectionManagerTest {
 	//lote de prubas
