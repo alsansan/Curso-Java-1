@@ -12,6 +12,14 @@ public class Persona {
 	@Column(name="PER_NOMBRE", length = 50)
 	private String nombre;
 	
+	public Persona() {
+		
+	}
+	
+	public Persona(int pCod, String pNom) {
+		codigo=pCod;
+		nombre=pNom;
+	}
 	public int getCodigo() {
 		return codigo;
 	}
